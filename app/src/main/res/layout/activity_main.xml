@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!--Button for the user to choose the sorting method-->
+    <Button
+        android:id="@+id/sortButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sort"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"/>
+
+    <!--Button for the user to initiate the search-->
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:layout_below="@+id/sortButton"
+        android:layout_alignParentRight="true" />
+
+    <!--Search EditText for user to enter search term-->
+    <EditText
+        android:id="@+id/searchEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Enter search term"
+        android:layout_toLeftOf="@+id/searchButton"
+        android:layout_below="@+id/sortButton"/>
+
+    <!--recycler view for displaying the list of images-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/idRVImages"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchButton" />
+
+    <!--Button for the user to create an album-->
+<!--    <Button-->
+<!--        android:id="@+id/createAlbumButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Create Album"-->
+<!--        android:layout_below="@+id/searchEditText"-->
+<!--        android:layout_alignParentLeft="true" />-->
+
+<!--    &lt;!&ndash;EditText for user to enter album name&ndash;&gt;-->
+<!--    <EditText-->
+<!--        android:id="@+id/albumNameEditText"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:hint="Enter album name"-->
+<!--        android:layout_toRightOf="@+id/createAlbumButton"-->
+<!--        android:layout_below="@+id/searchEditText"/>-->
+
+<!--    &lt;!&ndash;Button for the user to rename an album&ndash;&gt;-->
+<!--    <Button-->
+<!--        android:id="@+id/renameAlbumButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Rename Album"-->
+<!--        android:layout_below="@+id/createAlbumButton"-->
+<!--        android:layout_alignParentLeft="true" />-->
+
+<!--    &lt;!&ndash;Button for the user to delete an album&ndash;&gt;-->
+<!--    <Button-->
+<!--        android:id="@+id/deleteAlbumButton"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Delete Album"-->
+<!--        android:layout_below="@+id/renameAlbumButton"-->
+<!--        android:layout_alignParentLeft="true" />-->
+
+</LinearLayout>

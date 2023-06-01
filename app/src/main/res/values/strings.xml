@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Gallery</string>
+    <string-array name="action_array">
+        <item>Sort</item>
+        <item>Search</item>
+        <item>Create Album</item>
+        <item>Rename Album</item>
+        <item>Delete Album</item>
+    </string-array>
+</resources>
