@@ -17,11 +17,11 @@ import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder> {
 
-    // creating a variable for our context and array list.
+    // 컨텍스트와 이미지 경로 배열을 위한 변수를 생성합니다.
     private final Context context;
     private final ArrayList<String> imagePathArrayList;
 
-    // on below line we have created a constructor.
+    // 아래 줄에서 생성자를 생성했습니다.
     public RecyclerViewAdapter(Context context, ArrayList<String> imagePathArrayList) {
         this.context = context;
         this.imagePathArrayList = imagePathArrayList;
@@ -30,7 +30,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @NonNull
     @Override
     public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // Inflate Layout in this method which we have created.
+        // 이 메서드에서 우리가 생성한 레이아웃을 인플레이트합니다.
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_layout, parent, false);
         return new RecyclerViewHolder(view);
     }
@@ -42,7 +42,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         if (pos != RecyclerView.NO_POSITION) {
             File imgFile = new File(imagePathArrayList.get(pos));
             if (imgFile.exists()) {
+                // 이미지 파일이 존재하면, 그 이미지를 뷰 홀더의 이미지 뷰에 로드합니다.
                 Picasso.get().load(imgFile).placeholder(R.drawable.ic_launcher_background).into(holder.imageIV);
+                // 각 이미지 아이템에 클릭 리스너를 설정합니다. 클릭하면 해당 이미지의 상세 페이지로 이동합니다.
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -60,20 +62,19 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public int getItemCount() {
-        // this method returns
-        // the size of recyclerview
+        // 이 메서드는 리사이클러뷰의 크기를 반환합니다.
         return imagePathArrayList.size();
     }
 
-    // View Holder Class to handle Recycler View.
+    // View Holder 클래스는 리사이클러뷰를 다루기 위해 만들어졌습니다.
     public static class RecyclerViewHolder extends RecyclerView.ViewHolder {
 
-        // creating variables for our views.
+        // 뷰들에 대한 변수를 생성합니다.
         private final ImageView imageIV;
 
         public RecyclerViewHolder(@NonNull View itemView) {
             super(itemView);
-            // initializing our views with their ids.
+            // 뷰들을 그들의 id를 통해 초기화합니다.
             imageIV = itemView.findViewById(R.id.idIVImage);
         }
     }
